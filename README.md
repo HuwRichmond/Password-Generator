@@ -14,3 +14,5 @@ Generator to have the following features:
 Comments added on the JS file describing individual lines on the JS code
 
 ![Screenshot of deployed application on browser".](./Screenshot%202022-06-27%20143908.png)
+
+URL for deployed application is: https://huwrichmond.github.io/Password-Generator/
