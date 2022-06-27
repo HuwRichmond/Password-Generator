@@ -1,4 +1,4 @@
-// special characters specified here
+// special characters specified here and given a specific name tag
 const specialCharacters = "!@#$%^&*()";
 const generateButton = document.getElementById('generateBtn')
 //chrome devtools indicates there is an error with this line of code.
@@ -10,15 +10,16 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   const specialCharacters = "!@#$%^&*()";
   const generateButton = document.getElementById('generateBtn')
+  //this is an event listener command assigned to the button being clicked to trigger the event.
   generateButton.addEventListener('click' = writePassword)
   passwordText.value = password;
 
 }
 
 // Prompts that come up after you click generate password
-//each prompt has been assigned a variable under the "generate password" function so make the prompts appear after the generate button is used.
+//each prompt has been assigned a variable under the "generate password" function so make the prompts appear after the generate button is used. the text in quotes is what the prompt is intended to say.
 function generatePassword() {
-  var passwordLength = prompt("Please enter the number of characters you want for you new password.  It must be more than 12 but less than 128.");
+  var passwordLength = prompt("Please specify password length between 8 and 128 characters.");
   var numbers = confirm("Do you want numbers in your password?");
   var lowerCases = confirm("Do you want lowercases in your password?");
   var upperCases = confirm("Do you want uppercases in your password?");
@@ -50,14 +51,14 @@ function generatePassword() {
     getUpperCases: function() {
       return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
     },
-//special characters variable - the "specialCharacters variable was specified above with an array of "!@#$%^&*()"
+//special characters variable - the "specialCharacters" variable was specified above with an array of "!@#$%^&*()"
     getSpecialCharacters: function() {
       return specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
     }
 
 };
 
-  // Checks to make sure user selected ok for all and uses empty minimums from above
+  // "if" statements used to Check to make sure user selected ok for prompts and uses empty minimums from above. one if statement is created for each of the 4 optional criteria.
 
   if (numbers === true) {
     minimumNumbers = functionArray.getNumbers();
@@ -94,7 +95,7 @@ function generatePassword() {
 
   }
 
-  // to make sure characters are added to the password
+  // these lines are to assign the numbers, special characters etc to the password or not based on whether the user specified them included or not.
   randomPasswordGenerated += minimumNumbers;
   randomPasswordGenerated += minimumLowerCases;
   randomPasswordGenerated += minimumUpperCases;
